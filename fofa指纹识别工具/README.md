@@ -11,6 +11,8 @@ matches[
 condition # 特殊条件 (无condition代表满足matches里面的任意一个search即可|有condition则根据规则来)
 ```
 
+**解压rules.7z到当前目录**  
+
 usage
 ```text
 Usage: webinfo.py [options]
