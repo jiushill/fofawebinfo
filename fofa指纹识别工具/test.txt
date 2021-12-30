@@ -1,0 +1,4 @@
+http://47.93.43.42:7080/
+https://121.235.52.47:8443/router_password_mobile.asp
+https://118.31.42.107/
+https://zabbix.its.maine.edu/zabbix/

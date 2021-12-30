@@ -1,0 +1,95 @@
+url,code,title,bodylength,webname
+https://101.133.234.184,200,BootDo,6805,bootstrap|chunked Encode|Conn KeepAlive|GZIP encode|jquery|nginx
+https://101.200.156.243,200,登录安科系统,3805,bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx
+https://101.201.106.190,200,康维元数据,4325,bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx
+https://101.230.218.26,200,登录春秋统一认证,43511,chunked Encode|Conn KeepAlive|jquery|tomcat
+https://101.42.103.64:5678,200,登录系统,3978,bootstrap|chunked Encode|Conn KeepAlive|jquery
+https://103.94.200.111,200,海信共享车位管理系统,5101,Apache-Shiro|bootstrap|Conn KeepAlive|jquery|jsp
+https://106.55.155.184:8088,200,琼山政企通服务平台,3909,bootstrap|chunked Encode|jquery
+https://112.6.224.72:83,200,login,4547,Apache-Shiro|chunked Encode|Conn KeepAlive|jquery|jsp|yui
+https://112.6.224.72:84,200,login,4549,Apache-Shiro|chunked Encode|Conn KeepAlive|jquery|jsp|yui
+https://113.107.4.35:8083,200,,7164,bootstrap|chunked Encode|jquery
+https://114.116.83.143:8090,200,登录云中心,4061,bootstrap|chunked Encode|jquery
+https://116.62.130.27,200,游戏后台,3810,bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx
+https://116.62.135.219,200,铁路运输进款汇缴平台登录,2956,Apache-Shiro|chunked Encode|Conn KeepAlive|GZIP encode|jquery|jsp|nginx
+https://118.195.153.165:8088,200,登录进销存系统,3877,bootstrap|chunked Encode|Conn KeepAlive|jquery
+https://119.45.231.133,200,登录蚨宁系统,3951,bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx
+https://119.45.43.24,500,None,109,Access-Control|Apache-Shiro|chunked Encode|Conn KeepAlive|GZIP encode|nginx
+https://120.79.169.190,200,GPer生态圈管理系统,6028,Access-Control|bootstrap|chunked Encode|Conn KeepAlive|GZIP encode|jquery|nginx
+https://121.36.51.140,200,登录北奔APP后台管理系统,4169,bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx
+https://121.43.190.232,200,登录星飞系统,3972,bootstrap|chunked Encode|Conn KeepAlive|GZIP encode|jquery|nginx|Ubuntu
+https://123.207.4.196,200,P02电子化投保中心,5617,bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx
+https://123.56.47.233,200,登录系统,3857,bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx
+https://123.57.12.149,200,小美服务,15553,Apache-Shiro|bootstrap|chunked Encode|Conn KeepAlive|jquery-ui|jquery|jsp
+https://123.57.141.131,200,吉瓦戈管理系统,4194,bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx|腾讯移动分析
+https://124.71.160.38,500,None,109,Access-Control|Apache-Shiro|chunked Encode|Conn KeepAlive|GZIP encode
+https://139.155.75.68,200,登录若依系统,3898,bootstrap|chunked Encode|Conn KeepAlive|GZIP encode|jquery|nginx
+https://139.9.231.125,200,登录,3879,bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx
+https://147.139.172.68,401,None,21,Apache-Shiro|Conn KeepAlive|jsp
+https://175.27.221.89:8088,200,澳芯岗位技能鉴定系统,3697,bootstrap|chunked Encode|Conn KeepAlive|jquery
+https://175.97.139.67,404,None,44,nginx
+https://180.76.109.214,502,502 Bad Gateway,559,Conn KeepAlive|nginx
+https://36.26.84.183:9443,200, »¶Ó­Ê¹ÓÃ SuperMap iServer ,361,Conn KeepAlive
+https://37.220.17.13,200,Medisa,124,GZIP encode
+https://39.107.80.236,200,登陆,3413,Apache-Shiro|chunked Encode|Conn KeepAlive|GZIP encode|jquery|nginx
+https://39.170.77.225:9443,200, »¶Ó­Ê¹ÓÃ SuperMap iServer ,361,Conn KeepAlive
+https://47.100.76.121,200,体育公园管理系统-登录,4002,bootstrap|chunked Encode|Conn KeepAlive|jquery
+https://47.103.149.67,200,CLM,8492,Apache-Shiro|bootstrap|chunked Encode|jquery|OpenSSL|yui
+https://47.103.8.85,200,登录百瑞赢帮助系统,3403,bootstrap|chunked Encode|Conn KeepAlive|GZIP encode|jquery|nginx
+https://47.104.31.214,200,维保保,21721,Apache-Shiro|bootstrap|chunked Encode|Conn KeepAlive|GZIP encode|jquery-ui|jquery|jsp|nginx
+https://47.105.118.98:9012,404,None,102,Access-Control|Apache-Shiro|chunked Encode|Conn KeepAlive
+https://47.105.206.191,200,充值后台,3943,bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx
+https://47.108.67.124,200,智慧工地监管云平台,37137,Apache-Shiro|chunked Encode|Conn KeepAlive|jquery|nginx|Ubuntu|yui|七牛CDN
+https://47.112.29.130,200,协力充管理系统 - 登录,5799,bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx|腾讯移动分析
+https://47.119.178.208,200,登录系统,3857,bootstrap|chunked Encode|Conn KeepAlive|GZIP encode|jquery|nginx
+https://47.96.68.193,200,登录,4197,Apache-Shiro|chunked Encode|jquery
+https://47.97.61.240,200,最物流-登录,2518,Apache-Shiro|bootstrap|chunked Encode|Conn KeepAlive|jquery|jsp
+https://49.232.49.122,200,庆都山后台管理系统,3982,bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx
+https://52.12.72.62,200,None,25,Apache-Shiro|chunked Encode|Conn KeepAlive
+https://52.28.162.59,200,Conclusion,3490,Apache-Shiro|chunked Encode|Conn KeepAlive|GZIP encode|jquery|nginx|Ubuntu
+https://58.222.235.165,404,互联网医院,2345,Access-Control|Apache-Shiro|chunked Encode|Conn KeepAlive|GZIP encode|jquery|jsp|nginx|vue框架
+https://61.183.70.136,200,系统登录,7056,Access-Control|Apache-Shiro|Conn KeepAlive|jquery|jsp|nginx
+https://8.142.36.255,200,登录若依系统,3897,Access-Control|bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx
+https://81.71.140.207,200,登录五星俱乐部选课系统,3833,bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx
+https://admins.employroll.com,200,Employ Roll - Login,9197,Apache-Shiro|GZIP encode|jquery-ui|jquery|jsp
+https://ahthaqi.gbqyun.com,200,template,616,Apache-Shiro|Conn KeepAlive|nginx
+https://amz.antcoor.net,200,蚁户助手-用户登录-蚁户BI+选品专家,4171,Apache-Shiro|chunked Encode|Conn KeepAlive|GZIP encode|jquery|jsp|nginx
+https://api.jiayuexixi.com,200,None,29,Access-Control|Apache-Shiro|Conn KeepAlive|nginx
+https://csm.df-finance.com.cn,200,系统登录,7056,Access-Control|Apache-Shiro|Conn KeepAlive|jquery|jsp|nginx
+https://dywxapp.agmoni.cn,200,东营区农业面源污染监测预警大数据平台,15073,Apache-Shiro|chunked Encode|Conn KeepAlive|jquery|yui
+https://envipath.org,200,None,789,Apache-Shiro|chunked Encode|Debian|GZIP encode|jsp
+https://ggxiche.com,200,登录BuBu系统,4058,bootstrap|GZIP encode|jquery
+https://idata.ruijie.com.cn:82,200,WIS-Wlan Intelligent Service,19841,bootstrap|cdnjs|chunked Encode|Conn KeepAlive|Embed JSON|google api|Google Hosted Libraries|GZIP encode|jquery-ui|jquery|jsp|nginx
+https://jxdhaqi.gbqyun.com,200,template,616,Apache-Shiro|Conn KeepAlive|nginx
+https://lk.ptac.net.cn,200,奕磐-门店客户经营专家,16164,Access-Control|chunked Encode|Conn KeepAlive|GZIP encode|jquery|jsp
+https://login.hksi.org,200,Login,13618,Apache-Shiro|bootstrap|chunked Encode|Conn KeepAlive|GZIP encode|jquery-ui|jquery|jsp
+https://medisa.com,200,Medisa,124,GZIP encode
+https://msp.suninfo.com,200,,5018,Conn KeepAlive|jquery-ui|jquery|nginx
+https://msp232.suninfo.com:10443,200,,5018,Conn KeepAlive|HttpOnly|jquery-ui|jquery|nginx
+https://msp93.suninfo.com:10443,200,,5018,Conn KeepAlive|HttpOnly|jquery-ui|jquery|nginx
+https://msptest.suninfo.com:10443,200,,5018,Conn KeepAlive|HttpOnly|jquery-ui|jquery|nginx
+https://my.rackspace.com,200,Rackspace Login,12080,chunked Encode|Conn KeepAlive|GZIP encode|nginx
+https://openai.ruijie.com.cn:82,200,WIS-Wlan Intelligent Service,19841,bootstrap|cdnjs|chunked Encode|Conn KeepAlive|Embed JSON|google api|Google Hosted Libraries|GZIP encode|jquery-ui|jquery|jsp|nginx
+https://pgxt.zzut.edu.cn,200,None,816,Conn KeepAlive
+https://portal.eu1prd.taulia.com,200,Taulia,2368,chunked Encode|Conn KeepAlive|GZIP encode
+https://portal.na1prd.taulia.com,200,Taulia,2368,chunked Encode|Conn KeepAlive|GZIP encode
+https://productstream.commercehub.com,200,CommerceHub - Login,16862,chunked Encode|Conn KeepAlive|google-analytics|GZIP encode|jsp
+https://pspe.microport.com.cn,200,登录,1883,Apache-Shiro|chunked Encode|Conn KeepAlive|GZIP encode|jquery|nginx
+https://ram.userbenchmark.com,200,RAM UserBenchmarks - 113 Memory Kits Compared,242824,Apache-Shiro|cdnjs|Facebook_insights|google api|Google Hosted Libraries|google-analytics|google站长平台|GZIP encode|jquery|jsp
+https://remac-rcs.mideazy.com,200,美的置业单点登录平台,11441,chunked Encode|Conn KeepAlive|GZIP encode|iframe|jquery|nginx
+https://sales.chengmei.com,200,管理,4231,bootstrap|chunked Encode|Conn KeepAlive|GZIP encode|jquery|nginx
+https://sdgmaqi.gbqyun.com,200,template,616,Apache-Shiro|Conn KeepAlive|nginx
+https://ssd.userbenchmark.com,200,SSD UserBenchmarks - 1058 Solid State Drives Compared,248591,Apache-Shiro|cdnjs|Facebook_insights|google api|Google Hosted Libraries|google-analytics|google站长平台|GZIP encode|jquery|jsp
+https://st.microport.com.cn,200,登录,1883,Apache-Shiro|chunked Encode|Conn KeepAlive|GZIP encode|jquery|nginx
+https://tts.piao.qunar.com,200,,984,Conn KeepAlive|jsp
+https://tts2.piao.qunar.com,200,,984,Conn KeepAlive|jsp
+https://umanage.changyan.com,200,"
+        通行证服务-登录
+    ",53783,chunked Encode|Conn KeepAlive|GZIP encode|jquery
+https://web.szbfc.net,200,深圳市报废车回收有限公司后台管理系统,4236,bootstrap|chunked Encode|jquery
+https://www.apsystemsema.com,200,Title,161,Conn KeepAlive|jsp
+https://www.ggxiche.com,200,登录BuBu系统,4058,bootstrap|GZIP encode|jquery
+https://www.medisa.com,200,Medisa,124,GZIP encode
+https://www.risk-cr.com,200,风控管理系统,4083,bootstrap|chunked Encode|Conn KeepAlive|jquery|nginx
+https://www.userbenchmark.com,200,Home - UserBenchmark,123442,Apache-Shiro|cdnjs|Facebook_insights|google api|Google Hosted Libraries|google-analytics|google站长平台|GZIP encode|jquery|jsp
+https://yunshang-platform-pre1.jcloudec.com,200,云小店,1476,chunked Encode|GZIP encode|jquery|Tengine|yui
