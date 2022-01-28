@@ -66,6 +66,9 @@ def gethttpinfo(url):
 
 # 解析返回内容判断是那个指纹
 def Parsing(response,fingerprintlist):
+        result=[]
+        start=0
+        end=len(fingerprintlist)
         for keyname in fingerprintlist:
             #print(response)
             regexpid = []
@@ -99,21 +102,28 @@ def Parsing(response,fingerprintlist):
 
                 # condition处理
                 res = []
+               # res.append(response)
                 if len(regexpid) > 0:
+                    if [webname] in result:
+                        break
                     if condition=="None":
                         res.append(webname)
-                        res.append(response)
                         #print("Found webname:{}".format(webname))
-                        return res
+                   #    print(res)
                     else:
                         tx = re.findall("[0-9]", condition)
                         for v in tx:
                             condition = condition.replace(v, "{} in regexpid".format(v))
                         string = "if {}:res.append(webname)".format(condition)
                         exec(string)
-                        res.append(response)
-                        if len(res)==2:
-                            return res
+
+                start+=1
+                if len(res)>0:
+                    result.append(res)
+
+        result.append(response)
+
+        return result
 
 
 # 保存文件
@@ -168,7 +178,8 @@ def main(urlist,teample_=""):
                 teample.append(tname)
         else:
             teample.append(teample_)
-            print("teample:{}".format(teample))
+
+        print("teample:{}".format(teample))
     else:
         print("teample:ALL")
 
@@ -200,29 +211,27 @@ def main(urlist,teample_=""):
         infodata = {}
         jg=data.get()
         if jg!=None:
-            webname=jg[0]
-            url=jg[1]["url"]
-            httpcode=jg[1]["httpcode"]
-            title=jg[1]["title"]
-            bodylength=len(jg[1]["body"])
+            url=jg[-1]["url"]
+            httpcode=jg[-1]["httpcode"]
+            title=jg[-1]["title"]
+            bodylength=len(jg[-1]["body"])
             infodata["url"]=url
             infodata["code"]=httpcode
             infodata["title"]=str(title).replace("<title>","").replace("</title>","")
             infodata["bodylength"]=bodylength
-            infodata["webname"]=webname
-            if url in jgdata.keys():
-                jgdata[url]["webname"]+="|{}".format(webname)
-            else:
-                jgdata[url]=infodata
+            infodata["webname"]="|".join(["".join(webname) for webname in jg[0:-1]])
+            jgdata[url]=infodata
            # print(url,webname,httpcode,title,bodylength)
 
     for key in jgdata:
         print("url:{} code:{} title:{} bodylength:{} webname:{}".format(jgdata[key]["url"],jgdata[key]["code"],jgdata[key]["title"],jgdata[key]["bodylength"],jgdata[key]["webname"]))
         if save!=None and save!="":
             savetofile(jgdata)
+    
     if save != None and save != "":
         print("save file:{}.{}".format(savefilename,save))
     print("End time:{}".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
+
 if __name__ == '__main__':
     parser=optparse.OptionParser()
     parser.add_option("-u",dest="url",help="单独url检测")
