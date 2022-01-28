@@ -6,6 +6,7 @@ import warnings
 import optparse
 import time
 import csv
+import chardet
 from bs4 import BeautifulSoup
 from multiprocessing import Pool
 warnings.filterwarnings('ignore')
@@ -45,7 +46,9 @@ def gethttpinfo(url):
     info={}
     try:
         rqt=requests.get(url=url,headers=headers,proxies=proxies,verify=False,timeout=5)
-        html=BeautifulSoup(rqt.text,"html.parser")
+        content=rqt.content
+        text=content.decode(chardet.detect(content)["encoding"]) # 处理title乱码
+        html=BeautifulSoup(text,"html.parser")
         title=str(html.find("title")).replace("\r","").replace("\n","")
         httpcode=rqt.status_code
         responseheader=""
