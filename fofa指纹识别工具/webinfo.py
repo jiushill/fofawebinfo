@@ -46,7 +46,7 @@ def gethttpinfo(url):
     try:
         rqt=requests.get(url=url,headers=headers,proxies=proxies,verify=False,timeout=5)
         html=BeautifulSoup(rqt.text,"html.parser")
-        title=str(html.find("title"))
+        title=str(html.find("title")).replace("\r","").replace("\n","")
         httpcode=rqt.status_code
         responseheader=""
         for key in rqt.headers.keys():
@@ -62,54 +62,56 @@ def gethttpinfo(url):
         return ""
 
 # 解析返回内容判断是那个指纹
-def Parsing(response,keyname,fingerprintlist):
-        #print(response)
-        regexpid = []
-        jsondata = fingerprintlist[keyname]  # json数据获取
-       # print(jsondata)
-        matches = jsondata["matches"]
-        matchescount = len(matches)  # 匹配类型数量
-        webname = jsondata["name"]  # web指纹名称
-        #print(webname, matchescount, condition)
-        if "condition" in jsondata.keys():
-            condition = jsondata["condition"]  # 是否有特殊条件
-        else:
-            condition = "None"
+def Parsing(response,fingerprintlist):
+        for keyname in fingerprintlist:
+            #print(response)
+            regexpid = []
+            jsondata = fingerprintlist[keyname]  # json数据获取
+           # print(jsondata)
+            matches = jsondata["matches"]
+            matchescount = len(matches)  # 匹配类型数量
+            webname = jsondata["name"]  # web指纹名称
+            #print(webname, matchescount, condition)
+            if "condition" in jsondata.keys():
+                condition = jsondata["condition"]  # 是否有特殊条件
+            else:
+                condition = "None"
 
-        for id, match in enumerate(matches):
-            searchkeylist = list(match.keys())
-            searchtype = match[searchkeylist[0]]  # 从什么地方搜索获取
-            searchmatch = searchkeylist[1]  # 搜索类型 (text|regexp)
-            search = match[searchkeylist[1]]  # 搜索的内容
-            if searchtype in response.keys():
-                #print(searchtype,searchmatch,search)
-                if searchmatch=="text":
-                    msearch=response[searchtype] # 取对应的数据
-                    if search in msearch:
-                        regexpid.append(id)
-                elif searchmatch=="regexp":
-                    msearch=response[searchtype]
-                    find=re.findall(search,msearch)
-                    if len(find)>0:
-                        regexpid.append(id)
+            for id, match in enumerate(matches):
+                searchkeylist = list(match.keys())
+                searchtype = match[searchkeylist[0]]  # 从什么地方搜索获取
+                searchmatch = searchkeylist[1]  # 搜索类型 (text|regexp)
+                search = match[searchkeylist[1]]  # 搜索的内容
+                if searchtype in response.keys():
+                    #print(searchtype,searchmatch,search)
+                    if searchmatch=="text":
+                        msearch=response[searchtype] # 取对应的数据
+                        if search in msearch:
+                            regexpid.append(id)
+                    elif searchmatch=="regexp":
+                        msearch=response[searchtype]
+                        find=re.findall(search,msearch)
+                        if len(find)>0:
+                            regexpid.append(id)
 
-            # condition处理
-            res = []
-            if len(regexpid) > 0:
-                if condition=="None":
-                    res.append(webname)
-                    res.append(response)
-                    #print("Found webname:{}".format(webname))
-                    return res
-                else:
-                    tx = re.findall("[0-9]", condition)
-                    for v in tx:
-                        condition = condition.replace(v, "{} in regexpid".format(v))
-                    string = "if {}:res.append(webname)".format(condition)
-                    exec(string)
-                    res.append(response)
-                    if len(res)==2:
+                # condition处理
+                res = []
+                if len(regexpid) > 0:
+                    if condition=="None":
+                        res.append(webname)
+                        res.append(response)
+                        #print("Found webname:{}".format(webname))
                         return res
+                    else:
+                        tx = re.findall("[0-9]", condition)
+                        for v in tx:
+                            condition = condition.replace(v, "{} in regexpid".format(v))
+                        string = "if {}:res.append(webname)".format(condition)
+                        exec(string)
+                        res.append(response)
+                        if len(res)==2:
+                            return res
+
 
 # 保存文件
 def savetofile(jgdata):
@@ -183,10 +185,10 @@ def main(urlist,teample_=""):
     # 异步多进程匹配指纹
     for httpinfo in result:
         response=httpinfo.get()
+
         if response!="":
             #print("check url:{}".format(response["url"]))
-            for keyname in fingerprintlist:
-                webinfo.append(T.apply_async(Parsing,args=(response,keyname,fingerprintlist)))
+            webinfo.append(T.apply_async(Parsing,args=(response,fingerprintlist)))
     T.close()
     T.join()
 
