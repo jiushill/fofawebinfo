@@ -7,15 +7,16 @@ import optparse
 import time
 import csv
 import chardet
-from bs4 import BeautifulSoup
-from multiprocessing import Pool
+from multiprocessing import Pool,Process
 warnings.filterwarnings('ignore')
 
 process=50
 proxies={}
-headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"}
+headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36",
+         "Cookie":"a=1;rememberMe=xxx"}
 fingerprintlist={}
 teample=[]
+cmsdata=[] #主动检测
 save="" # 保存文件格式
 savefilename = str(time.strftime("%Y-%m-%d", time.localtime())) # 保存的文件名
 savelist=["txt","csv","json"] # 支持的保存文件格式
@@ -47,9 +48,17 @@ def gethttpinfo(url):
     try:
         rqt=requests.get(url=url,headers=headers,proxies=proxies,verify=False,timeout=5)
         content=rqt.content
-        text=content.decode(chardet.detect(content)["encoding"]) # 处理title乱码
-        html=BeautifulSoup(text,"html.parser")
-        title=str(html.find("title")).replace("\r","").replace("\n","")
+        enc=chardet.detect(content)["encoding"]
+        if enc==None:
+            encode="utf-8"
+        else:
+            encode=enc
+        text=content.decode(encode) # 处理title乱码
+        title_search=re.findall("title([\s\S]*?)</title>",text)
+        if len(title_search)==0:
+            title=""
+        else:
+            title=title_search[0].replace("title>","").replace("</","").replace("\r","").replace("\n","").lstrip(">")
         httpcode=rqt.status_code
         responseheader=""
         for key in rqt.headers.keys():
@@ -207,6 +216,7 @@ def main(urlist,teample_=""):
     T.join()
 
     jgdata={}
+
     for data in webinfo:
         infodata = {}
         jg=data.get()
@@ -230,7 +240,9 @@ def main(urlist,teample_=""):
     
     if save != None and save != "":
         print("save file:{}.{}".format(savefilename,save))
+
     print("End time:{}".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
+
 
 if __name__ == '__main__':
     parser=optparse.OptionParser()
@@ -260,6 +272,7 @@ if __name__ == '__main__':
         if save not in savelist:
             print("[-] 没有保存的文件格式，支持的格式:{}".format(",".join(savelist)))
             exit()
+
     if option.url or (option.url and option.teample):
         if option.teample!="":
             tpe=option.teample
